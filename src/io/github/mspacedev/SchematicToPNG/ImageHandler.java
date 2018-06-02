@@ -126,6 +126,7 @@ public class ImageHandler {
         blockMap.put(20547, Color.decode("#005999"));
         blockMap.put(24643, Color.decode("#005999"));
         blockMap.put(28739, Color.decode("#005999"));
+        blockMap.put(73, Color.decode("#CCD3FF"));
         blockMap.put(74, Color.decode("#003B66"));
         blockMap.put(79, Color.decode("#001D33"));
         blockMap.put(80, Color.decode("#CCD3FF"));

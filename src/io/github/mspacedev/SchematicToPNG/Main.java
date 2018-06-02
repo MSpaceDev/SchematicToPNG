@@ -1,5 +1,6 @@
 package io.github.mspacedev.SchematicToPNG;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,15 +29,19 @@ public class Main {
         SchematicHandler schematicHandler = new SchematicHandler();
         ImageHandler imageHandler = new ImageHandler();
 
-        final File folder = new File(".");
+        String dir = ".";
+
+        final File folder = new File(dir + "/");
         List<String> files = new ArrayList<>(listFilesForFolder(folder));
 
         for (String s : files){
-            List<Integer> blockIDs = schematicHandler.read(s + ".schematic");
+            List<Integer> blockIDs = schematicHandler.read(dir + "/" + s + ".schematic");
             if (blockIDs.isEmpty())
                 continue;
             imageHandler.createImage(s, blockIDs);
         }
+
+        JOptionPane.showMessageDialog(null, "Program finished running!");
     }
 
 }

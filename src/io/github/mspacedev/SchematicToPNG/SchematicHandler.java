@@ -2,6 +2,7 @@ package io.github.mspacedev.SchematicToPNG;
 
 import org.jnbt.*;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -46,11 +47,12 @@ public class SchematicHandler {
                         int uniqueID = (blocks[i] + (data[i] * 4096));
                         blockIDs.add(uniqueID);
                     }
-                } else {
-                    System.out.println(schematicName + " is an invalid size!");
                 }
+            } else {
+                JOptionPane.showMessageDialog(null, schematicName + " is an invalid size!" +
+                        "\n\n\nCurrent Size: [" + width + "," + height + "," + length + "]" +
+                        "\n\nShould be: [16,16,1] OR [1,16,16]");
             }
-
         } catch (Exception e) {
             System.out.println(e.toString());
         }
